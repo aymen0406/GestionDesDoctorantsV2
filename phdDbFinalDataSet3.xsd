@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="phdDbFinalDataSet3" targetNamespace="http://tempuri.org/phdDbFinalDataSet3.xsd" xmlns:mstns="http://tempuri.org/phdDbFinalDataSet3.xsd" xmlns="http://tempuri.org/phdDbFinalDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="phdDbFinalConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="phdDbFinalConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GestionDesDoctorantsV2.Properties.Settings.GlobalReference.Default.phdDbFinalConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ViewConsulterInscriptionTableAdapter" GeneratorDataComponentClassName="ViewConsulterInscriptionTableAdapter" Name="ViewConsulterInscription" UserDataComponentName="ViewConsulterInscriptionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="phdDbFinalConnectionString (Settings)" DbObjectName="phdDbFinal.dbo.ViewConsulterInscription" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT CIN_Passeport, NomFr, PrenomFr, AnneeUniversitaire, Niveau, Commentaire FROM dbo.ViewConsulterInscription</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CIN_Passeport" DataSetColumn="CIN_Passeport" />
+              <Mapping SourceColumn="NomFr" DataSetColumn="NomFr" />
+              <Mapping SourceColumn="PrenomFr" DataSetColumn="PrenomFr" />
+              <Mapping SourceColumn="AnneeUniversitaire" DataSetColumn="AnneeUniversitaire" />
+              <Mapping SourceColumn="Niveau" DataSetColumn="Niveau" />
+              <Mapping SourceColumn="Commentaire" DataSetColumn="Commentaire" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="phdDbFinalDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="phdDbFinalDataSet3" msprop:Generator_UserDSName="phdDbFinalDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ViewConsulterInscription" msprop:Generator_TableClassName="ViewConsulterInscriptionDataTable" msprop:Generator_TableVarName="tableViewConsulterInscription" msprop:Generator_TablePropName="ViewConsulterInscription" msprop:Generator_RowDeletingName="ViewConsulterInscriptionRowDeleting" msprop:Generator_RowChangingName="ViewConsulterInscriptionRowChanging" msprop:Generator_RowEvHandlerName="ViewConsulterInscriptionRowChangeEventHandler" msprop:Generator_RowDeletedName="ViewConsulterInscriptionRowDeleted" msprop:Generator_UserTableName="ViewConsulterInscription" msprop:Generator_RowChangedName="ViewConsulterInscriptionRowChanged" msprop:Generator_RowEvArgName="ViewConsulterInscriptionRowChangeEvent" msprop:Generator_RowClassName="ViewConsulterInscriptionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CIN_Passeport" msprop:Generator_ColumnVarNameInTable="columnCIN_Passeport" msprop:Generator_ColumnPropNameInRow="CIN_Passeport" msprop:Generator_ColumnPropNameInTable="CIN_PasseportColumn" msprop:Generator_UserColumnName="CIN_Passeport">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NomFr" msprop:Generator_ColumnVarNameInTable="columnNomFr" msprop:Generator_ColumnPropNameInRow="NomFr" msprop:Generator_ColumnPropNameInTable="NomFrColumn" msprop:Generator_UserColumnName="NomFr">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PrenomFr" msprop:Generator_ColumnVarNameInTable="columnPrenomFr" msprop:Generator_ColumnPropNameInRow="PrenomFr" msprop:Generator_ColumnPropNameInTable="PrenomFrColumn" msprop:Generator_UserColumnName="PrenomFr">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AnneeUniversitaire" msprop:Generator_ColumnVarNameInTable="columnAnneeUniversitaire" msprop:Generator_ColumnPropNameInRow="AnneeUniversitaire" msprop:Generator_ColumnPropNameInTable="AnneeUniversitaireColumn" msprop:Generator_UserColumnName="AnneeUniversitaire">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Niveau" msprop:Generator_ColumnVarNameInTable="columnNiveau" msprop:Generator_ColumnPropNameInRow="Niveau" msprop:Generator_ColumnPropNameInTable="NiveauColumn" msprop:Generator_UserColumnName="Niveau">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Commentaire" msprop:Generator_ColumnVarNameInTable="columnCommentaire" msprop:Generator_ColumnPropNameInRow="Commentaire" msprop:Generator_ColumnPropNameInTable="CommentaireColumn" msprop:Generator_UserColumnName="Commentaire" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

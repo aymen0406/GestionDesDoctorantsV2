@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{47A927A8-CC6E-4535-A98A-5FE73DE263D3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GestionDesDoctorantsV2</RootNamespace>
+    <AssemblyName>GestionDesDoctorantsV2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\itext\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AffchInscriptionInf.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AffchInscriptionInf.Designer.cs">
+      <DependentUpon>AffchInscriptionInf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AffichCursUnivInf.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AffichCursUnivInf.Designer.cs">
+      <DependentUpon>AffichCursUnivInf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjoutDeuxiemeEncadrant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutDeuxiemeEncadrant.Designer.cs">
+      <DependentUpon>AjoutDeuxiemeEncadrant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjouterDirecteurDeThese.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjouterDirecteurDeThese.Designer.cs">
+      <DependentUpon>AjouterDirecteurDeThese.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjouterInscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjouterInscription.Designer.cs">
+      <DependentUpon>AjouterInscription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ajouter_Doctorants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ajouter_Doctorants.Designer.cs">
+      <DependentUpon>Ajouter_Doctorants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChoixAjoutEncadrant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChoixAjoutEncadrant.Designer.cs">
+      <DependentUpon>ChoixAjoutEncadrant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompteFr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CompteFr.Designer.cs">
+      <DependentUpon>CompteFr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DALDoctorant.cs" />
+    <Compile Include="DAL\DALDocuments.cs" />
+    <Compile Include="DAL\DALEtablissement.cs" />
+    <Compile Include="DAL\DALInscription.cs" />
+    <Compile Include="DAL\DALEnseignantChercheur.cs" />
+    <Compile Include="DAL\DALStructureRecherche.cs" />
+    <Compile Include="DAL\DALTypeDocument.cs" />
+    <Compile Include="DoctorantsAffiche.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DoctorantsAffiche.Designer.cs">
+      <DependentUpon>DoctorantsAffiche.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnseignantCherch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EnseignantCherch.Designer.cs">
+      <DependentUpon>EnseignantCherch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Doctorant.cs" />
+    <Compile Include="Entities\Etablissement.cs" />
+    <Compile Include="Entities\Inscription.cs" />
+    <Compile Include="Entities\EnseignantChercheur.cs" />
+    <Compile Include="Entities\TypeDocument.cs" />
+    <Compile Include="FicheDoctorants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FicheDoctorants.Designer.cs">
+      <DependentUpon>FicheDoctorants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddEtab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddEtab.Designer.cs">
+      <DependentUpon>FormAddEtab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPDFGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPDFGenerator.Designer.cs">
+      <DependentUpon>FormPDFGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStructRech.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStructRech.Designer.cs">
+      <DependentUpon>FormStructRech.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTypeDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTypeDocument.Designer.cs">
+      <DependentUpon>FormTypeDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionCompte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionCompte.Designer.cs">
+      <DependentUpon>GestionCompte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionDocument.Designer.cs">
+      <DependentUpon>GestionDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestSout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestSout.Designer.cs">
+      <DependentUpon>GestSout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoriqueAdministrative.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoriqueAdministrative.Designer.cs">
+      <DependentUpon>HistoriqueAdministrative.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoriqueCursusUniv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoriqueCursusUniv.Designer.cs">
+      <DependentUpon>HistoriqueCursusUniv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoriqueStatutFr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoriqueStatutFr.Designer.cs">
+      <DependentUpon>HistoriqueStatutFr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoPlusInf.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InfoPlusInf.Designer.cs">
+      <DependentUpon>InfoPlusInf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inscription.Designer.cs">
+      <DependentUpon>Inscription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InscriptionAffiche.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InscriptionAffiche.Designer.cs">
+      <DependentUpon>InscriptionAffiche.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InscriptionPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InscriptionPanel.Designer.cs">
+      <DependentUpon>InscriptionPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="institut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="institut.Designer.cs">
+      <DependentUpon>institut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstitutAff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InstitutAff.Designer.cs">
+      <DependentUpon>InstitutAff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lineseparator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="lineseparator.Designer.cs">
+      <DependentUpon>lineseparator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PanelEncadrantAff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PanelEncadrantAff.Designer.cs">
+      <DependentUpon>PanelEncadrantAff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParamEnseignantCherch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParamEnseignantCherch.Designer.cs">
+      <DependentUpon>ParamEnseignantCherch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametreF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParametreF.Designer.cs">
+      <DependentUpon>ParametreF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametresStructRech.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParametresStructRech.Designer.cs">
+      <DependentUpon>ParametresStructRech.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParametresTypeDocument.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParametresTypeDocument.Designer.cs">
+      <DependentUpon>ParametresTypeDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="phdDbFinalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>phdDbFinalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="phdDbFinalDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>phdDbFinalDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="phdDbFinalDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>phdDbFinalDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="phdDbFinalDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>phdDbFinalDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="phDManagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>phDManagementDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoutenanceAffiche.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SoutenanceAffiche.Designer.cs">
+      <DependentUpon>SoutenanceAffiche.cs</DependentUpon>
+    </Compile>
+    <Compile Include="soutenanceAjoutInterUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="soutenanceAjoutInterUser.Designer.cs">
+      <DependentUpon>soutenanceAjoutInterUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistique.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Statistique.Designer.cs">
+      <DependentUpon>Statistique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoutenanceInf.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SoutenanceInf.Designer.cs">
+      <DependentUpon>SoutenanceInf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StructRechAff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StructRechAff.Designer.cs">
+      <DependentUpon>StructRechAff.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AffchInscriptionInf.resx">
+      <DependentUpon>AffchInscriptionInf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AffichCursUnivInf.resx">
+      <DependentUpon>AffichCursUnivInf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjoutDeuxiemeEncadrant.resx">
+      <DependentUpon>AjoutDeuxiemeEncadrant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjouterDirecteurDeThese.resx">
+      <DependentUpon>AjouterDirecteurDeThese.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjouterInscription.resx">
+      <DependentUpon>AjouterInscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ajouter_Doctorants.resx">
+      <DependentUpon>Ajouter_Doctorants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChoixAjoutEncadrant.resx">
+      <DependentUpon>ChoixAjoutEncadrant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompteFr.resx">
+      <DependentUpon>CompteFr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorantsAffiche.resx">
+      <DependentUpon>DoctorantsAffiche.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnseignantCherch.resx">
+      <DependentUpon>EnseignantCherch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FicheDoctorants.resx">
+      <DependentUpon>FicheDoctorants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddEtab.resx">
+      <DependentUpon>FormAddEtab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPDFGenerator.resx">
+      <DependentUpon>FormPDFGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStructRech.resx">
+      <DependentUpon>FormStructRech.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTypeDocument.resx">
+      <DependentUpon>FormTypeDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionCompte.resx">
+      <DependentUpon>GestionCompte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionDocument.resx">
+      <DependentUpon>GestionDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestSout.resx">
+      <DependentUpon>GestSout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoriqueAdministrative.resx">
+      <DependentUpon>HistoriqueAdministrative.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoriqueCursusUniv.resx">
+      <DependentUpon>HistoriqueCursusUniv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoriqueStatutFr.resx">
+      <DependentUpon>HistoriqueStatutFr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoPlusInf.resx">
+      <DependentUpon>InfoPlusInf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inscription.resx">
+      <DependentUpon>Inscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InscriptionAffiche.resx">
+      <DependentUpon>InscriptionAffiche.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InscriptionPanel.resx">
+      <DependentUpon>InscriptionPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="institut.resx">
+      <DependentUpon>institut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstitutAff.resx">
+      <DependentUpon>InstitutAff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lineseparator.resx">
+      <DependentUpon>lineseparator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelEncadrantAff.resx">
+      <DependentUpon>PanelEncadrantAff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParamEnseignantCherch.resx">
+      <DependentUpon>ParamEnseignantCherch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametreF.resx">
+      <DependentUpon>ParametreF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametresStructRech.resx">
+      <DependentUpon>ParametresStructRech.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParametresTypeDocument.resx">
+      <DependentUpon>ParametresTypeDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SoutenanceAffiche.resx">
+      <DependentUpon>SoutenanceAffiche.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="soutenanceAjoutInterUser.resx">
+      <DependentUpon>soutenanceAjoutInterUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistique.resx">
+      <DependentUpon>Statistique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoutenanceInf.resx">
+      <DependentUpon>SoutenanceInf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StructRechAff.resx">
+      <DependentUpon>StructRechAff.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="phdDbFinalDataSet.xsc">
+      <DependentUpon>phdDbFinalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="phdDbFinalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>phdDbFinalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="phdDbFinalDataSet.xss">
+      <DependentUpon>phdDbFinalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="phdDbFinalDataSet1.xsc">
+      <DependentUpon>phdDbFinalDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="phdDbFinalDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>phdDbFinalDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="phdDbFinalDataSet1.xss">
+      <DependentUpon>phdDbFinalDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="phdDbFinalDataSet2.xsc">
+      <DependentUpon>phdDbFinalDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="phdDbFinalDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>phdDbFinalDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="phdDbFinalDataSet2.xss">
+      <DependentUpon>phdDbFinalDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="phdDbFinalDataSet3.xsc">
+      <DependentUpon>phdDbFinalDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="phdDbFinalDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>phdDbFinalDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="phdDbFinalDataSet3.xss">
+      <DependentUpon>phdDbFinalDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="phDManagementDataSet.xsc">
+      <DependentUpon>phDManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="phDManagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>phDManagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="phDManagementDataSet.xss">
+      <DependentUpon>phDManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BLL\" />
+    <Folder Include="Forms\" />
+    <Folder Include="Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\managermod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parametrencad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImporterInsc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImporterInsc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExporterInsc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ConsultInscrit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OuvertureAnne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuNew01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clotureAnne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExportInsc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImportInsc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImpInscnou.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exportnou.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ConsultInsc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctorant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soutenancefin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Encadrants.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StRech.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\docu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test222222.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fffffsssss1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dfsdfsdfsfsdfds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ydfsdjsadfs01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test2222221.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sdfsdfsfdsfsf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hhhhhhh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\test1dfsfsfds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sdfds01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sdkjsfsskdfhss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-envelopehh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-envelope %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-envelope %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone-receiver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icondel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1493796514_icon-81-document-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1493796532_icon-136-document-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1493796538_icon-79-document-cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1493796514_icon-81-document-axfdfdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1493796538_icon-79-document-canchhel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1493796538_icon-79-documejhthnt-cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1493796514_icon-81-documsddsnt-axfdfdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1493796532_icon-136-docudffdment-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1493796538_icon-79-documejhthnt-cancel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menuasdasdadas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Msdfsdfsdfds01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dsafdadw01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dsafdadw011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asdasdsdaq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asdaasdqz1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business-people-meeting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asdasdadas3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\streqaw5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fddf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ycsafasfsd01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\substract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1493885896_floppy_disk_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1493886002_floppy_ssssssse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enseignnatcherche.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DDDDD1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuNew011.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
